@@ -1,0 +1,50 @@
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <h2>Contact Agent</h2>
+    
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input 
+          id="name"
+          type="text"
+          formControlName="name"
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone (XXX-XXX-XXXX):</label>
+        <input 
+          id="phone"
+          type="tel"
+          formControlName="phone"
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input 
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="preferredContact">Preferred Contact Method:</label>
+        <select 
+          id="preferredContact"
+          formControlName="preferredContact"
+          class="form-control">
+          <option value="Phone">Phone</option>
+          <option value="Email">Email</option>
+        </select>
+      </div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        <button type="button" (click)="onClose()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Insurance Quote Calculator</h1>
+
+  <form [formGroup]="quoteForm" (ngSubmit)="calculateQuote()">
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input 
+        id="age"
+        type="number"
+        formControlName="age"
+        class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="years">Years Driving:</label>
+      <input 
+        id="years"
+        type="number"
+        formControlName="years"
+        class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input 
+          type="checkbox"
+          formControlName="accidents">
+        Had accidents in last 5 years?
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="!quoteForm.valid">
+      Calculate Quote
+    </button>
+  </form>
+
+  <div *ngIf="quoteDetails" class="quote-results">
+    <h2>Your Quote Details</h2>
+    <p>Total Premium: ${{quoteDetails.basePremium}}</p>
+    <p>Full Payment (5% off): ${{quoteDetails.fullPaymentDiscount}}</p>
+    <p>Down Payment (10%): ${{quoteDetails.downPayment}}</p>
+    <p>Remaining Balance: ${{quoteDetails.remainingBalance}}</p>
+    <p>6 Monthly Payments: ${{quoteDetails.monthlyPayment}}</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{error}}
+  </div>
+
+  <app-contact-agent-modal 
+    *ngIf="showContactModal" 
+    (close)="closeContactModal()">
+  </app-contact-agent-modal>
+</div>

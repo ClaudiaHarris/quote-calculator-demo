@@ -1,0 +1,37 @@
+src/
+├── app/
+│   ├── components/
+│   │   ├── quote-calculator/
+│   │   │   ├── quote-calculator.component.ts
+│   │   │   ├── quote-calculator.component.html
+│   │   │   ├── quote-calculator.component.css
+│   │   │   └── quote-calculator.component.spec.ts
+│   │   │
+│   │   └── contact-agent-modal/
+│   │       ├── contact-agent-modal.component.ts
+│   │       ├── contact-agent-modal.component.html
+│   │       ├── contact-agent-modal.component.css
+│   │       └── contact-agent-modal.component.spec.ts
+│   │
+│   ├── services/
+│   │   ├── quote.service.ts
+│   │   └── quote.service.spec.ts
+│   │
+│   ├── models/
+│   │   ├── quote-request.ts
+│   │   ├── premium-details.ts
+│   │   └── email-request.ts
+│   │
+│   ├── app.component.ts
+│   ├── app.component.html
+│   ├── app.component.css
+│   ├── app.config.ts
+│   ├── app.routes.ts
+│   └── app.component.spec.ts
+│
+├── assets/
+│   └── images/
+│
+├── index.html
+├── main.ts
+└── styles.css
